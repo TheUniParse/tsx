@@ -29,9 +29,10 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'off',
     'no-return-assign': 'off',
     'no-use-before-define': 'off',
-    'no-unused-vars': 'warn',
     'spaced-comment': 'warn',
     'react/button-has-type': 'off',
     'import/no-absolute-path': 'off',
+    'prefer-const': 'warn',
+    '@typescript-eslint/lines-between-class-members': 'off',
   },
 }
