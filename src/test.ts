@@ -51,8 +51,10 @@
   // classes
 
   class Books {
-    type: string | undefined
-    stock: number | undefined
+    // fields must be assigned by constructor(), else use !
+    type!: string
+    stock!: number
+    
   }
   const techBooks = new Books()
   console.log(techBooks)

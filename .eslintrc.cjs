@@ -28,11 +28,12 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'off',
     'no-return-assign': 'off',
-    'no-use-before-define': 'off',
     'spaced-comment': 'warn',
     'react/button-has-type': 'off',
     'import/no-absolute-path': 'off',
     'prefer-const': 'warn',
+    '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
+    'no-promise-executor-return': 'off',
   },
 }

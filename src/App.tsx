@@ -1,7 +1,7 @@
-import './App.scss'
+import Tailwind from './Tailwind'
 
 export default function App() {
-  return <p>hello</p>
+  return <Tailwind />
 }
 
 /**
