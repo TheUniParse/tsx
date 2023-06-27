@@ -1,5 +1,5 @@
-export default function DarkModeSvg(props: { light: boolean }) {
-  return !props?.light ? <DarkSvg /> : <LightSvg />
+export default function DarkModeSvg(props: { dark: boolean }) {
+  return props?.dark ? <DarkSvg /> : <LightSvg />
 }
 
 function DarkSvg() {

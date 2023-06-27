@@ -14,19 +14,19 @@ export default function DarkModeSwitcher() {
   const initThemeMode = storageTheme ?? 'system'
   const [themeMode, setThemeMode] = useState(initThemeMode)
 
-  const isManual = storageTheme?.match(/dark|light/)
+  const isManual = !!storageTheme?.match(/dark|light/)
   const initDarkMode =
     (isManual ? storageTheme : systemTheme) === 'dark'
   const [darkMode, setDarkMode] = useState(initDarkMode)
 
-  // on storage dark mode change
+  // on storage dark mode change in other tabs
   useEffect(() => {
     setThemeMode(initThemeMode)
     setDarkMode(initDarkMode)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storageTheme])
 
-  // on system dark mode change
+  // on system dark mode change in settings
   useEffect(() => {
     if (isManual) return
     setDarkMode(systemTheme === 'dark')
@@ -42,35 +42,25 @@ export default function DarkModeSwitcher() {
   )
 
   return (
-    <fieldset
-      className='flex justify-evenly rounded-xl'
-      name='theme'
-      onChange={e => {
-        const mode = e.target.value
-        setThemeMode(mode)
-        localStorage.setItem('theme', mode)
+    <span className=''>
+      dark mode: {isManual ? 'manual' : 'auto'}{' '}
+      <DarkModeSvg dark={darkMode} />{' '}
+      <select
+        onChange={e => {
+          const mode = e.target.value
+          setThemeMode(mode)
+          localStorage.setItem('theme', mode)
 
-        const isManual = ['light', 'dark'].includes(mode)
-        setDarkMode((isManual ? mode : systemTheme) === 'dark')
-      }}>
-      <legend className='text-center'>
-        theme mode: {isManual ? 'manual' : 'auto'}{' '}
-        {darkMode ? 'dark' : 'light'}{' '}
-        <DarkModeSvg light={!darkMode} />
-      </legend>
-
-      {['dark', 'light', 'system'].map(mode => (
-        <label key={mode}>
-          {mode}
-          <input
-            type='radio'
-            name='theme'
-            checked={mode === themeMode}
-            value={mode}
-          />
-        </label>
-      ))}
-    </fieldset>
+          const isManual = ['light', 'dark'].includes(mode)
+          setDarkMode(
+            (isManual ? mode : systemTheme) === 'dark'
+          )
+        }}>
+        {['dark', 'light', 'system'].map(mode => (
+          <option selected={themeMode === mode}>{mode}</option>
+        ))}
+      </select>
+    </span>
   )
 }
 
