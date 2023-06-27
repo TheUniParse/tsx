@@ -22,7 +22,9 @@ export default function Storage() {
     length – the number of stored items.
     💡 use Object.keys(storage) to exlode internal members as setItems
   
-  event window.onstorage = ({
+* event:
+  ⚠️ except the window who caused it, all window objects who share access trigger the event!!
+  window.onstorage = ({
     key, // the update key, null if clear() called
     oldValue, // null in initialization
     newValue, // null if removed
