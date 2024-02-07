@@ -1,7 +1,35 @@
+import DarkModeSvg from './DarkModeSvg'
 import Tailwind from './Tailwind'
 
 export default function App() {
-  return <Tailwind />
+  return (
+    <>
+      {false && <Tailwind />}
+      <div className='border-dashed border-yellow-500'>
+        <div
+          style={{
+            border: 'solid red thin',
+            position: 'relative',
+            display: 'flex',
+            placeContent: 'center',
+            placeItems: 'center',
+            width: '20%',
+            height: '5em',
+          }}>
+          
+          <span
+            style={{
+              position: 'absolute',
+              bottom: '.2em',
+              right: '.2em',
+            }}>
+            partner
+          </span>
+          <DarkModeSvg dark />
+        </div>
+      </div>
+    </>
+  )
 }
 
 /**
