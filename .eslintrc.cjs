@@ -8,12 +8,12 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
-  },
+   parser: '@typescript-eslint/parser',
+   parserOptions: {
+     ecmaVersion: 'latest',
+     sourceType: 'module',
+     project: './tsconfig.json',
+   },
   plugins: [
     'react-refresh',
     '@typescript-eslint',
@@ -25,7 +25,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'prettier/prettier': 'off',
     'no-console': 'off',
-    'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'off',
     'no-return-assign': 'off',
     'spaced-comment': 'warn',

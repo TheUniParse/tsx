@@ -13,11 +13,11 @@ module.exports = {
   bracketSpacing: true,
   bracketSameLine: true,
   proseWrap: 'never',
-  angeStart: 0,
-  angeEnd: Infinity,
+  rangeStart: 0,
+  rangeEnd: Infinity,
   // singleAttributePerLine: true,
   plugins: [
-    "@ianvs/prettier-plugin-sort-imports",
+    // "@ianvs/prettier-plugin-sort-imports",
     require.resolve("prettier-plugin-tailwindcss")
   ],
 }
